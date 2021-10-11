@@ -1,6 +1,6 @@
 {
   "version": "0.3.0",
-  "name": "@kuunnnn/utils",
+  "name": "@kun96/utils",
   "main": "./cs/index.js",
   "types": "./cs/index.d.ts",
   "module": "./es/browser.js",
@@ -10,11 +10,6 @@
     "name": "Hu Kun",
     "email": "mrhukun@gmail.com"
   },
-  "files": [
-    "./es",
-    "./cs",
-    "./src"
-  ],
   "scripts": {
     "prebuild:es": "rm -rf ./es",
     "prebuild:cs": "rm -rf ./cs",
@@ -23,14 +18,14 @@
     "fix": "gts fix",
     "compile": "npm run build:cs && npm run build:es"
   },
-  "homepage": "https://github.com/kuunnnn/ts-utils",
+  "homepage": "https://github.com/kun86/ts-utils",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "description": "util list",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kuunnnn/utils"
+    "url": "https://github.com/kun96/utils"
   },
   "license": "MIT",
   "dependencies": {
@@ -41,7 +36,8 @@
     "node-rsa": "^1.0.8",
     "query-string": "^6.13.5",
     "randombytes": "^2.1.0",
-    "svg-captcha": "^1.4.0"
+    "svg-captcha": "^1.4.0",
+    "@peculiar/webcrypto": "^1.1.7"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.0",
@@ -49,8 +45,13 @@
     "@types/node-forge": "^0.9.4",
     "@types/node-rsa": "^1.0.0",
     "@types/randombytes": "^2.0.0",
-    "gts": "^2.0.2",
+    "@types/node": "^16.10.3",
+    "@types/react": "^17.0.27",
+    "gts": "^2.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
     "typescript": "^3.8.3",
-    "@types/node": "^13.11.1"
+    "chalk": "^4.1.2"
   }
 }

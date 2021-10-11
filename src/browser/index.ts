@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 /**
  * @function 将base64链接转换为文件
  * @param dataUrl {string} Data URLs 字符串
@@ -49,4 +47,21 @@ export function dataURItoBlob(base64Data: string): Blob {
   });
 }
 
-/* eslint-disable no-undef */
+/**
+ * 下载二进制格式的文件
+ * @param data blob
+ * @param fileName string
+ * @return void
+ * @date 2021/9/22
+ */
+export function downloadFileByBlobData(data: Blob, fileName: string): void {
+  const blob = new Blob([data]);
+  const objectUrl = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = objectUrl;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  window.URL.revokeObjectURL(objectUrl);
+}

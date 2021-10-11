@@ -1,11 +1,11 @@
 import qs, {ParsedQuery} from 'query-string';
+import {ValueOf} from '../types';
 
 /**
  * @function 获取 url 上的参数
  * @param url
- * @return {qs.ParsedQuery}
  */
-export function getParams(url: string): qs.ParsedQuery {
+export function getParams(url: string): ParsedQuery {
   return qs.parseUrl(url).query;
 }
 
@@ -18,17 +18,6 @@ export function getParams(url: string): qs.ParsedQuery {
 export function padZero(n: number): string {
   const s = n.toString();
   return s.padStart ? s.padStart(2, '0') : s.length > 1 ? s : '0' + s;
-}
-
-/**
- * @function 等待
- * @param num {number} 毫秒
- * @return {void}
- */
-export function sleep(num = 1000): Promise<void> {
-  return new Promise(resolve => {
-    setTimeout(resolve, num);
-  });
 }
 
 /**
@@ -134,4 +123,60 @@ export function fileSize(size: number, digits = 2): string {
   }
   // 1024Pib = 1152921504606846976byte
   return (size / 1125899906842624).toFixed(digits) + 'Pib';
+}
+
+/**
+ * 交换数组两个索引数据位置
+ * @description 直接修改原数组也就是说是不是纯函数
+ * @date 2021/9/22
+ */
+export function swap<T>(array: T[], x: number, y: number): T[] {
+  const temp = array[x];
+  array[x] = array[y];
+  array[y] = temp;
+  return array;
+}
+
+/**
+ * 等待一段时间
+ * @description node.js 环境应该使用 setTimeout 方法
+ * @date 2021/9/22
+ */
+export function sleep(time = 1000): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+/**
+ * 安全解析json
+ * @date 2021/9/22
+ */
+export function safeParseJSON<T>(jsonString: string | undefined, defaultValue: T): T {
+  if (!jsonString) return defaultValue;
+  try {
+    return JSON.parse(jsonString);
+  } catch (err) {
+    return defaultValue;
+  }
+}
+
+/**
+ * 规范化 pathname
+ * @description 去掉多余的 / , 前面添加尾部去掉: /a/b/c
+ * @param path string
+ * @return string
+ * @date 2021/9/3
+ */
+export function normalizePathname(path: string): string {
+  return `//${path}//`.replace(/\/+/g, '/').replace(/\/$/, '').normalize();
+}
+
+/**
+ * 取字符串枚举的 Values
+ * @description 字符串枚举不会生成反向的value,所以直接取values
+ * @param value
+ * @return []
+ * @date 2021/9/22
+ */
+export function stringEnumValueOf<T extends Record<string, string>>(value: T): ValueOf<T>[] {
+  return (Object.values(value) as unknown) as ValueOf<T>[];
 }

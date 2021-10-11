@@ -1,4 +1,5 @@
 import os, {NetworkInterfaceInfo} from 'os';
+import * as http from 'http';
 
 /**
  * @function 获取本地 ip 地址 IPv4 or IPv6
@@ -38,4 +39,24 @@ export function ipv4Address(): string[] {
  */
 export function ipv6Address(): string[] {
   return ipAddress('IPv6');
+}
+
+export function getUserIp(req: http.IncomingMessage): string {
+  let ipAddr: string | undefined;
+  if (req.headers['x-forwarded-for']) {
+    const forwarded = req.headers['x-forwarded-for'];
+    const firstIp = Array.isArray(forwarded) ? forwarded[0] : forwarded || '';
+    ipAddr = firstIp.split(',').shift();
+  }
+  if (!ipAddr) {
+    ipAddr = req?.connection?.remoteAddress;
+  }
+  if (!ipAddr) {
+    ipAddr = req?.socket?.remoteAddress;
+  }
+  // 如果前面是 ::ffff: 表示这是一个 ipv6 兼容 ipv4 地址
+  if (ipAddr && /^::ffff:/.test(ipAddr.trim())) {
+    return ipAddr.substring(7);
+  }
+  return ipAddr || '';
 }
