@@ -23,6 +23,34 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@peculiar/asn1-schema@^2.0.44":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@peculiar/asn1-schema/-/asn1-schema-2.1.0.tgz#b1c185e1bd65c269d693c569534880cedc8aa5fa"
+  integrity sha512-D6g4C5YRKC/iPujMAOXuZ7YGdaoMx8GsvWzfVSyx2LYeL38ECOKNywlYAuwbqQvON64lgsYdAujWQPX8hhoBLw==
+  dependencies:
+    "@types/asn1js" "^2.0.2"
+    asn1js "^2.3.1"
+    pvtsutils "^1.2.1"
+    tslib "^2.3.1"
+
+"@peculiar/json-schema@^1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@peculiar/json-schema/-/json-schema-1.1.12.tgz#fe61e85259e3b5ba5ad566cb62ca75b3d3cd5339"
+  integrity sha512-coUfuoMeIB7B8/NMekxaDzLhaYmp0HZNPEjYRm9goRou8UZIC3z21s0sL9AWoCw4EG876QyO3kYrc61WNF9B/w==
+  dependencies:
+    tslib "^2.0.0"
+
+"@peculiar/webcrypto@^1.1.7":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@peculiar/webcrypto/-/webcrypto-1.3.2.tgz#8ea98f1410068cf7da0c7e74758a21caa26caf8d"
+  integrity sha512-oUgNj+8oT7uROEMEpZZ3U+kZjyxj1KXuvA8P5kiMUveTya9eyS8KTqu/dzdEtYC3u7dvjknVz+0sUfkWOBHfQg==
+  dependencies:
+    "@peculiar/asn1-schema" "^2.0.44"
+    "@peculiar/json-schema" "^1.1.12"
+    pvtsutils "^1.2.2"
+    tslib "^2.3.1"
+    webcrypto-core "^1.7.1"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -34,6 +62,11 @@
   integrity sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
   dependencies:
     defer-to-connect "^1.0.1"
+
+"@types/asn1js@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/asn1js/-/asn1js-2.0.2.tgz#bb1992291381b5f06e22a829f2ae009267cdf8c5"
+  integrity sha512-t4YHCgtD+ERvH0FyxvNlYwJ2ezhqw7t+Ygh4urQ7dJER8i185JPv6oIM3ey5YQmGN6Zp9EMbpohkjZi9t3UxwA==
 
 "@types/bcryptjs@^2.4.2":
   version "2.4.2"
@@ -81,15 +114,20 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.13.tgz#ee1128e881b874c371374c1f72201893616417c9"
   integrity sha512-rouEWBImiRaSJsVA+ITTFM6ZxibuAlTuNOCyxVbwreu6k6+ujs7DfnU9o+PShFhET78pMBl3eH+AGSI5eOTkPA==
 
-"@types/node@^13.11.1":
-  version "13.13.23"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.23.tgz#abd99b4b806144b257ae298b3aec5a2c10c74534"
-  integrity sha512-L31WmMJYKb15PDqFWutn8HNwrNK6CE6bkWgSB0dO1XpNoHrszVKV1Clcnfgd6c/oG54TVF8XQEvY2gQrW8K6Mw==
+"@types/node@^16.10.3":
+  version "16.11.26"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.26.tgz#63d204d136c9916fb4dcd1b50f9740fe86884e47"
+  integrity sha512-GZ7bu5A6+4DtG7q9GsoHXy3ALcgeIHP4NnL0Vv2wu0uUB/yQex26v0tf6/na1mm0+bS9Uw+0DFex7aaKr2qawQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
+
+"@types/prop-types@*":
+  version "15.7.4"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
+  integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
 
 "@types/randombytes@^2.0.0":
   version "2.0.0"
@@ -97,6 +135,25 @@
   integrity sha512-bz8PhAVlwN72vqefzxa14DKNT8jK/mV66CSjwdVQM/k3Th3EPKfUtdMniwZgMedQTFuywAsfjnZsg+pEnltaMA==
   dependencies:
     "@types/node" "*"
+
+"@types/react@^17.0.27":
+  version "17.0.42"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.42.tgz#8242b9219bf8a911c47f248e327206fea3f4ee5a"
+  integrity sha512-nuab3x3CpJ7VFeNA+3HTUuEkvClYHXqWtWd7Ud6AZYW7Z3NH9WKtgU+tFB0ZLcHq+niB/HnzLcaZPqMJ95+k5Q==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/scheduler@*":
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
+  integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+
+"@types/web@^0.0.55":
+  version "0.0.55"
+  resolved "https://registry.yarnpkg.com/@types/web/-/web-0.0.55.tgz#0677cd86c6a4dd8c3592bd5f36435aa7e1b99028"
+  integrity sha512-YMH9aZrSJIMRMioCUwrgauI3iS/w2wRFN45Xxm0FE9Tt3hqaqkvOzjDFGsNjyKZzz7GJC0ilb+0tv59ytSUbrQ==
 
 "@typescript-eslint/eslint-plugin@2.31.0":
   version "2.31.0"
@@ -226,6 +283,13 @@ asn1@^0.2.4:
   integrity sha512-jxwzQpLQjSmWXgwaCZE9Nz+glAG01yF1QnWgbhGwHI5A6FRIEY6IVqtHhIepHqI7/kyEyQEagBC5mBEFlIYvdg==
   dependencies:
     safer-buffer "~2.1.0"
+
+asn1js@^2.2.0, asn1js@^2.3.1:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/asn1js/-/asn1js-2.3.2.tgz#1864f859f6e5dfd7350c0543f411e18963f30592"
+  integrity sha512-IYzujqcOk7fHaePpTyvD3KPAA0AjT3qZlaQAw76zmPPAV/XTjhO+tbHjbFbIQZIhw+fk9wCSfb0Z6K+JHe8Q2g==
+  dependencies:
+    pvutils latest
 
 astral-regex@^1.0.0:
   version "1.0.0"
@@ -555,6 +619,11 @@ crypto-random-string@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-2.0.0.tgz#ef2a7a966ec11083388369baa02ebead229b30d5"
   integrity sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==
+
+csstype@^3.0.2:
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.11.tgz#d66700c5eacfac1940deb4e3ee5642792d85cd33"
+  integrity sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==
 
 debug@^4.0.1, debug@^4.1.1:
   version "4.2.0"
@@ -1542,10 +1611,10 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-node-forge@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.1.tgz#775368e6846558ab6676858a4d8c6e8d16c677b5"
-  integrity sha512-G6RlQt5Sb4GMBzXvhfkeFmbqR6MzhtnT7VTHuLadjkii3rdYHNdw0m8zA4BTxVIh68FicCQ2NSUANpsqkr9jvQ==
+node-forge@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-1.3.0.tgz#37a874ea723855f37db091e6c186e5b67a01d4b2"
+  integrity sha512-08ARB91bUi6zNKzVmaj3QO7cr397uiDT2nJ63cHjyNtCTWIgvS47j3eT0WfzUwS9+6Z5YshRaoasFkXCKrIYbA==
 
 node-rsa@^1.0.8:
   version "1.0.8"
@@ -1771,6 +1840,18 @@ pupa@^2.0.1:
   integrity sha512-hEJH0s8PXLY/cdXh66tNEQGndDrIKNqNC5xmrysZy3i5C3oEoLna7YAOad+7u125+zH1HNXUmGEkrhb3c2VriA==
   dependencies:
     escape-goat "^2.0.0"
+
+pvtsutils@^1.2.1, pvtsutils@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/pvtsutils/-/pvtsutils-1.2.2.tgz#62ef6bc0513cbc255ee02574dedeaa41272d6101"
+  integrity sha512-OALo5ZEdqiI127i64+CXwkCOyFHUA+tCQgaUO/MvRDFXWPr53f2sx28ECNztUEzuyu5xvuuD1EB/szg9mwJoGA==
+  dependencies:
+    tslib "^2.3.1"
+
+pvutils@latest:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/pvutils/-/pvutils-1.1.3.tgz#f35fc1d27e7cd3dfbd39c0826d173e806a03f5a3"
+  integrity sha512-pMpnA0qRdFp32b1sJl1wOJNxZLQ2cbQx+k6tjNtZ8CpvVhNqEPRgivZ2WOUev2YMajecdH7ctUPDvEe87nariQ==
 
 query-string@^6.13.5:
   version "6.13.5"
@@ -2180,6 +2261,11 @@ tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.0.tgz#d624983f3e2c5e0b55307c3dd6c86acd737622c6"
   integrity sha512-+Zw5lu0D9tvBMjGP8LpvMb0u2WW2QV3y+D8mO6J+cNzCYIN4sVy43Bf9vl92nqFahutN0I8zHa7cc4vihIshnw==
 
+tslib@^2.0.0, tslib@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
+
 tsutils@^3.17.1:
   version "3.17.1"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-3.17.1.tgz#ed719917f11ca0dee586272b2ac49e015a2dd759"
@@ -2220,11 +2306,6 @@ typedarray-to-buffer@^3.1.5:
   integrity sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
   dependencies:
     is-typedarray "^1.0.0"
-
-typescript@^3.8.3:
-  version "3.9.7"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
-  integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 
 unique-string@^2.0.0:
   version "2.0.0"
@@ -2283,6 +2364,18 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+webcrypto-core@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/webcrypto-core/-/webcrypto-core-1.7.1.tgz#eb30112c28d0f75442cfb52cae59676c7fe155ef"
+  integrity sha512-Gw2zLzYSJ7Imp5lLDu3CcWB5oTTACMDEE2PjoLfttGgIhd7BfackBdVgEzd9ZM/i65gpNq0+IelL0JZ48QwzNg==
+  dependencies:
+    "@peculiar/asn1-schema" "^2.0.44"
+    "@peculiar/json-schema" "^1.1.12"
+    "@types/web" "^0.0.55"
+    asn1js "^2.2.0"
+    pvtsutils "^1.2.2"
+    tslib "^2.3.1"
 
 which@^1.2.9:
   version "1.3.1"
