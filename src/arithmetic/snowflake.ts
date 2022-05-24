@@ -9,7 +9,7 @@ export class Snowflake {
   private number = 0;
   private last_time = 0;
   // 2019-11-07T09:58:52.370Z
-  constructor(private epoch=1573120745213){  }
+  constructor(private epoch = 1573120745213) {}
 
   generate() {
     let now = new Date().getTime();
@@ -29,18 +29,6 @@ export class Snowflake {
       throw 'System time error';
     }
     this.last_time = now;
-    return (((now - this.epoch) << TIME_SHIFT) | this.number );
+    return ((now - this.epoch) << TIME_SHIFT) | this.number;
   }
-
 }
-
-
-const sn = new Snowflake()
-
-
-console.log("id: ", sn.generate())
-console.log("id: ", sn.generate())
-console.log("id: ", sn.generate())
-console.log("id: ", sn.generate())
-console.log("id: ", sn.generate())
-console.log("id: ", sn.generate())
