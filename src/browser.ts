@@ -1,3 +1,2 @@
-export * from './common';
+export * from './shared';
 export * from './browser';
-export * from './security/browser';

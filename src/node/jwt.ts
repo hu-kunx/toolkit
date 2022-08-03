@@ -1,6 +1,6 @@
-import {HMAC_SHA256} from '../security/hash';
+import {HMAC_SHA256} from '../shared/security/hash';
 import {IncomingHttpHeaders} from 'http';
-import {safeStringCompare} from '../security/compare';
+import {safeStringCompare} from '../shared/security/compare';
 
 function hexToJwtBase64(hex: string) {
   const base64 = Buffer.from(hex, 'hex').toString('base64');
