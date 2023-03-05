@@ -4,16 +4,16 @@
  * @returns {string}
  * @todo 负数
  */
- export function toHex(num: number): string {
-  if (typeof num !== "number") return "";
-  const bytes = "0123456789ABCDEF";
+export function toHex(num: number): string {
+  if (typeof num !== 'number') return '';
+  const bytes = '0123456789ABCDEF';
   const result = [];
   if (num < 10) {
-    return "0x0" + num;
+    return '0x0' + num;
   }
   while (num !== 0) {
     result.push(bytes[num % 16]);
     num = Math.floor(num / 16);
   }
-  return "0x" + result.reverse().join("");
+  return '0x' + result.reverse().join('');
 }

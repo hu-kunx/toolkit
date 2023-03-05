@@ -79,11 +79,11 @@ export function isUndefinedOrNull(value: any): value is null | undefined {
   return value === void 0 || value === null;
 }
 
-export function isFunction ( target: unknown): target is Function  {
-  return typeof target === "function"
+export function isFunction(target: unknown): target is Function {
+  return typeof target === 'function';
 }
 
-export function isPromise <T = any>(val: unknown): val is Promise<T> {
+export function isPromise<T = any>(val: unknown): val is Promise<T> {
   // @ts-ignore
-  return typeof val === 'object' && isFunction(val['then']) && isFunction(val['catch'])
+  return typeof val === 'object' && isFunction(val['then']) && isFunction(val['catch']);
 }

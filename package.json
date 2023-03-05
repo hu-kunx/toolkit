@@ -1,8 +1,7 @@
 {
-  "version": "0.0.5",
-  "name": "@huk.io/toolkit",
+  "name": "@huk/lever",
   "author": "Hu Kun",
-  "sideEffects": false,
+  "version": "0.0.5",
   "type": "module",
   "types": "types/index.d.ts",
   "engines": {
